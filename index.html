@@ -185,185 +185,27 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-test04" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/26/test04/">测试</a>
+      <a class="article-title" href="/2020/06/27/test/">Artifacts</a>
     </h1>
   
 
         
-        <a href="/2020/06/26/test04/" class="archive-article-date">
-  	<time datetime="2020-06-26T13:25:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-26</time>
+        <a href="/2020/06/27/test/" class="archive-article-date">
+  	<time datetime="2020-06-27T00:43:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.kuang.pojo.Person;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException; <span class="keyword">import</span> javax.servlet.http.*; <span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SessionDemo01</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123; </span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"><span class="comment">//解决乱码问题 </span></span><br><span class="line">req.setCharacterEncoding(<span class="string">"UTF-8"</span>); </span><br><span class="line">resp.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">resp.setContentType(<span class="string">"text/html;charset=utf-8"</span>); </span><br><span class="line"><span class="comment">//得到Session        </span></span><br><span class="line">HttpSession session = req.getSession();</span><br><span class="line"><span class="comment">//给Session中存东西        </span></span><br><span class="line">session.setAttribute(<span class="string">"name"</span>,<span class="keyword">new</span> Person(<span class="string">"haha"</span>,<span class="number">1</span>));</span><br><span class="line"><span class="comment">//获取Session的ID        </span></span><br><span class="line">String sessionId = session.getId();</span><br><span class="line"><span class="comment">//判断Session是不是新创建        </span></span><br><span class="line"><span class="keyword">if</span> (session.isNew())&#123; </span><br><span class="line">resp.getWriter().write(<span class="string">"session创建成功,ID:"</span>+sessionId);</span><br><span class="line"> &#125;<span class="keyword">else</span> &#123; </span><br><span class="line">resp.getWriter().write(<span class="string">"session以及在服务器中存在 了,ID:"</span>+sessionId);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Session创建的时候做了什么事情； </span></span><br><span class="line"><span class="comment">//        Cookie cookie = new Cookie("JSESSIONID",sessionId); </span></span><br><span class="line"><span class="comment">//        resp.addCookie(cookie);</span></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">doGet(req, resp); </span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">//得到Session HttpSession session = req.getSession();</span></span><br><span class="line">Person person = (Person) session.getAttribute(<span class="string">"name"</span>);</span><br><span class="line">HttpSession session = req.getSession();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="http://qcjb5copd.bkt.clouddn.com/cat%26girl%26sleep.png" alt="img"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">随笔/</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/26/test04/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-img" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/26/img/">my first blog</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/26/img/" class="archive-article-date">
-  	<time datetime="2020-06-26T10:04:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="你好呀"><a href="#你好呀" class="headerlink" title="你好呀"></a>你好呀</h1><p>憨憨</p>
-<p><img src="https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1141259048,554497535&fm=26&gp=0.jpg" alt="img"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">随笔/</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">测试博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/26/img/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-test03" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/26/test03/">my first blog</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/26/test03/" class="archive-article-date">
-  	<time datetime="2020-06-26T09:17:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="背景换了的话有点丑"><a href="#背景换了的话有点丑" class="headerlink" title="背景换了的话有点丑"></a>背景换了的话有点丑</h1><p>以后再琢磨，就到这里吧<br>没有什么是容易的</p>
+        <p>找不到想要的Artifacts原因，可以去配置文件porm.xml看看<br><img src="https://img-blog.csdnimg.cn/20200622171015306.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>看看自己artifactId是否配置错误<br><img src="https://img-blog.csdnimg.cn/20200622171255680.png" alt="在这里插入图片描述"><br>也有可能idea没刷出来，刷新一下就可以。</p>
 
       
 
@@ -381,7 +223,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JavaWeb</a>
         		</li>
       		
 		</ul>
@@ -391,82 +233,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/26/test03/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-测试博客go" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/26/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2go/">testBlogGo</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/26/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2go/" class="archive-article-date">
-  	<time datetime="2020-06-26T06:36:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="java"><a href="#java" class="headerlink" title="java"></a>java</h1><p>学java已经两个月了，感觉自己会的东西还是太少，学得也很慢</p>
-<p>需要努力呀<br>还是测试</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">目录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/26/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2go/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/06/27/test/">展开全文 >></a>
         </p>
       
 
@@ -503,22 +270,20 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/26/diary/">my first blog</a>
+      <a class="article-title" href="/2020/06/27/diary/">摘抄</a>
     </h1>
   
 
         
-        <a href="/2020/06/26/diary/" class="archive-article-date">
-  	<time datetime="2020-06-26T05:04:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-26</time>
+        <a href="/2020/06/27/diary/" class="archive-article-date">
+  	<time datetime="2020-06-27T00:29:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="test"><a href="#test" class="headerlink" title="test"></a>test</h1><ul>
-<li>随笔测试</li>
-</ul>
+        <h1 id="《活着》摘抄"><a href="#《活着》摘抄" class="headerlink" title="《活着》摘抄"></a>《活着》摘抄</h1><p>&emsp;&emsp;我知道黄昏正在转瞬即逝，黑夜从天而降了。我看到广阔的<br>土地袒露着结实的胸膛，那是召唤的姿态，就像女人召唤着她们<br>的儿女，土地召唤着黑夜来临。<br><img src="http://qcjb5copd.bkt.clouddn.com/cat%26girl%26sleep.png" alt=""></p>
 
       
 
@@ -534,10 +299,6 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">随笔/</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">测试博客</a>
-        		</li>
       		
 		</ul>
 	</div>
@@ -546,161 +307,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/26/diary/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-my-first-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/26/my-first-blog/">my first blog</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/26/my-first-blog/" class="archive-article-date">
-  	<time datetime="2020-06-26T00:43:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><h2 id="内容-1"><a href="#内容-1" class="headerlink" title="内容"></a>内容</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="http://www.codesheep.cn" target="_blank" rel="noopener">www.codesheep.cn</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">目录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/26/my-first-blog/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/26/test/">my first blog</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/26/test/" class="archive-article-date">
-  	<time datetime="2020-06-26T00:43:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="测试博客"><a href="#测试博客" class="headerlink" title="测试博客"></a>测试博客</h1><ul>
-<li>idea直接操作编写</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">测试博客</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">目录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/26/test/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/06/27/diary/">展开全文 >></a>
         </p>
       
 
@@ -823,19 +430,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">随笔/</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">测试博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">目录</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">测试</a>
+                <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">随笔/</a>
               </li>
             
             <div class="clearfix"></div>
