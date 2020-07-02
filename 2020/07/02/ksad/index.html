@@ -6,24 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Artifacts | Lichennan&#39;s blog</title>
+  <title>erro | Lichennan&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="找不到想要的Artifacts原因，可以去配置文件porm.xml看看看看自己artifactId是否配置错误也有可能idea没刷出来，刷新一下就可以。">
+  <meta name="description" content="maven依赖，找不到jar包的问题 网上有关包找不到的问题比较多，都是比较普遍发生的。常用的解决方法可以百度解决，这里我提供几种方法解决">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Artifacts">
-<meta property="og:url" content="http://yoursite.com/2020/06/27/test/index.html">
+<meta property="og:title" content="erro">
+<meta property="og:url" content="http://yoursite.com/2020/07/02/ksad/index.html">
 <meta property="og:site_name" content="Lichennan&#39;s blog">
-<meta property="og:description" content="找不到想要的Artifacts原因，可以去配置文件porm.xml看看看看自己artifactId是否配置错误也有可能idea没刷出来，刷新一下就可以。">
+<meta property="og:description" content="maven依赖，找不到jar包的问题 网上有关包找不到的问题比较多，都是比较普遍发生的。常用的解决方法可以百度解决，这里我提供几种方法解决">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200622171015306.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200622171255680.png">
-<meta property="article:published_time" content="2020-06-27T00:43:04.000Z">
-<meta property="article:modified_time" content="2020-06-27T00:49:35.448Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/202007021406356.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200702141138258.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200702141138300.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200702140850263.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200702140850364.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2020-07-02T05:31:04.000Z">
+<meta property="article:modified_time" content="2020-07-02T06:13:07.850Z">
 <meta property="article:author" content="LiChennan">
 <meta property="article:tag" content="目录">
-<meta property="article:tag" content="JavaWeb">
+<meta property="article:tag" content="问题解决">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200622171015306.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/202007021406356.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="Lichennan&#39;s blog" type="application/atom+xml">
   
@@ -192,27 +195,51 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-test" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-ksad" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Artifacts
+      erro
     </h1>
   
 
         
-        <a href="/2020/06/27/test/" class="archive-article-date">
-  	<time datetime="2020-06-27T00:43:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-27</time>
+        <a href="/2020/07/02/ksad/" class="archive-article-date">
+  	<time datetime="2020-07-02T05:31:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>找不到想要的Artifacts原因，可以去配置文件porm.xml看看<br><img src="https://img-blog.csdnimg.cn/20200622171015306.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>看看自己artifactId是否配置错误<br><img src="https://img-blog.csdnimg.cn/20200622171255680.png" alt="在这里插入图片描述"><br>也有可能idea没刷出来，刷新一下就可以。</p>
+        <h2 id="maven依赖，找不到jar包的问题"><a href="#maven依赖，找不到jar包的问题" class="headerlink" title="maven依赖，找不到jar包的问题"></a>maven依赖，找不到jar包的问题</h2><ul>
+<li><p>网上有关包找不到的问题比较多，都是比较普遍发生的。常用的解决方法可以百度解决，这里我提供几种方法解决</p>
+<a id="more"></a>
+
+</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/202007021406356.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>如图，将IDE构建/运行操作委托给Maven</p>
+<p><img src="https://img-blog.csdnimg.cn/20200702141138258.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70" alt="img"></p>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><ul>
+<li>讲maven的仓库换成idea的默认仓库（但是会占c盘空间，不过对固态盘也没什么影响，可以更改idea有关配置，把仓库换到d盘）</li>
+</ul>
+<p>造成丢包的原因，目前尚不清楚，可能版本问题，19的版本没有问题。</p>
+<p><img src="https://img-blog.csdnimg.cn/20200702141138300.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70" alt="img"></p>
+<h3 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h3><ul>
+<li>比较原始的方法，就是不用maven，我们直接导包。可以在项目建立一个lib目录，然后将需要的jar包复制进去，然后如图操作</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20200702140850263.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70" alt="img"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200702140850364.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70" alt="img"></p>
+<h3 id="方法四"><a href="#方法四" class="headerlink" title="方法四"></a>方法四</h3><p><code>最后一个方法，有点点麻烦，但也可以解决。找你的朋友要一份maven仓库，直接拷贝过来，把自己原来的仓库删掉，用你拷过来的</code></p>
+<p>基本上上面的方法可以解决找不到包的问题。（基本的设置没错的前提）</p>
+<h2 id="1-字节的-UTF-8-序列的字节-1-无效问题"><a href="#1-字节的-UTF-8-序列的字节-1-无效问题" class="headerlink" title="1 字节的 UTF-8 序列的字节 1 无效问题"></a>1 字节的 UTF-8 序列的字节 1 无效问题</h2><p>这个就是编码问题了。可能你上个项目没问题，下个项目就出问题了，原因我暂时不清楚</p>
+<h3 id="解决方法一"><a href="#解决方法一" class="headerlink" title="解决方法一"></a>解决方法一</h3><p>直接将配置文件.xml中的中文删除</p>
+<h3 id="解决方法二"><a href="#解决方法二" class="headerlink" title="解决方法二"></a>解决方法二</h3><p>手动将<?xml version="1.0" encoding="UTF-8"?>中的UTF-8更改成UTF8</p>
+<p>这是一个很玄学的问题，我用的方法一，运行成功后我又把中文加上了，结果又可以运行了。</p>
 
       
 
@@ -261,7 +288,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JavaWeb</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">问题解决</a>
         		</li>
       		
 		</ul>
@@ -317,7 +344,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/27/test/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/02/ksad/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -331,18 +358,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/07/02/ksad/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          erro
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/06/27/diary/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">摘抄</div>
+    <a href="/2020/06/27/test/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Artifacts</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -369,7 +387,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#maven依赖，找不到jar包的问题"><span class="toc-number">1.</span> <span class="toc-text">maven依赖，找不到jar包的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法一"><span class="toc-number">1.1.</span> <span class="toc-text">方法一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法二"><span class="toc-number">1.2.</span> <span class="toc-text">方法二</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法三"><span class="toc-number">1.3.</span> <span class="toc-text">方法三</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法四"><span class="toc-number">1.4.</span> <span class="toc-text">方法四</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-字节的-UTF-8-序列的字节-1-无效问题"><span class="toc-number">2.</span> <span class="toc-text">1 字节的 UTF-8 序列的字节 1 无效问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方法一"><span class="toc-number">2.1.</span> <span class="toc-text">解决方法一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方法二"><span class="toc-number">2.2.</span> <span class="toc-text">解决方法二</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
