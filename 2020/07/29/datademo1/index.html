@@ -6,26 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>go语言入门 | Lichennan&#39;s blog</title>
+  <title>稀疏算法 | Lichennan&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="—，什么是go语言简介 Go（又称 Golang）是 Google的 Robert Griesemer，Rob Pike 及 Ken Thompson 开发的一种静态强类型，编译型语言。Go 语言语法与 c相近，但功能上有：内存安全，GC（垃圾回收），结构形态及 CSP-style并发计算。  Go语言的优点  Go 很容易学习 基于 goroutines 和 channels 的简单并发编程 丰">
+  <meta name="description" content="稀疏数组举例">
 <meta property="og:type" content="article">
-<meta property="og:title" content="go语言入门">
-<meta property="og:url" content="http://yoursite.com/2020/07/25/happy/index.html">
+<meta property="og:title" content="稀疏算法">
+<meta property="og:url" content="http://yoursite.com/2020/07/29/datademo1/index.html">
 <meta property="og:site_name" content="Lichennan&#39;s blog">
-<meta property="og:description" content="—，什么是go语言简介 Go（又称 Golang）是 Google的 Robert Griesemer，Rob Pike 及 Ken Thompson 开发的一种静态强类型，编译型语言。Go 语言语法与 c相近，但功能上有：内存安全，GC（垃圾回收），结构形态及 CSP-style并发计算。  Go语言的优点  Go 很容易学习 基于 goroutines 和 channels 的简单并发编程 丰">
+<meta property="og:description" content="稀疏数组举例">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200727164813694.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200727164913388.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200727165016451.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200727165052246.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70">
-<meta property="article:published_time" content="2020-07-25T05:28:04.000Z">
-<meta property="article:modified_time" content="2020-07-28T04:42:21.788Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020072919292591.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200729190734590.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2020-07-29T05:28:04.000Z">
+<meta property="article:modified_time" content="2020-07-29T11:41:39.401Z">
 <meta property="article:author" content="LiChennan">
-<meta property="article:tag" content="随笔">
-<meta property="article:tag" content="小记">
+<meta property="article:tag" content="目录">
+<meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200727164813694.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2020072919292591.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="Lichennan&#39;s blog" type="application/atom+xml">
   
@@ -194,73 +192,51 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-happy" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-datademo1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      go语言入门
+      稀疏算法
     </h1>
   
 
         
-        <a href="/2020/07/25/happy/" class="archive-article-date">
-  	<time datetime="2020-07-25T05:28:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-25</time>
+        <a href="/2020/07/29/datademo1/" class="archive-article-date">
+  	<time datetime="2020-07-29T05:28:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="—，什么是go语言"><a href="#—，什么是go语言" class="headerlink" title="—，什么是go语言"></a>—，什么是go语言</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
-<li><p><strong>Go</strong>（又称 <strong>Golang</strong>）是 <code>Google</code>的 Robert Griesemer，Rob Pike 及 Ken Thompson 开发的一种静态强类型，编译型语言。Go 语言语法与 c相近，但功能上有：内存安全，GC（垃圾回收），结构形态及 CSP-style并发计算。</p>
-</li>
-<li><p><strong>Go</strong>语言的优点</p>
-<ol>
-<li>Go 很容易学习</li>
-<li>基于 goroutines 和 channels 的简单并发编程</li>
-<li>丰富的标准库<a id="more"></a></li>
-<li>Go 性能优越</li>
-<li>语言层面定义源代码的格式化</li>
-<li>标准化的测试框架</li>
-<li>Go 程序方便操作</li>
-<li>Defer 声明，避免忘记清理</li>
-<li>新类型</li>
-</ol>
-</li>
-<li><p>安装GO开发包，并配置环境</p>
-<p><a href="http://mp.weixin.qq.com/s?__biz=Mzg2NTAzMTExNg==&mid=2247484399&idx=1&sn=5293ea76a940dfb935d0030580175eb2&chksm=ce61054cf9168c5a3f942e365369539ec1c903eef9c7c85b671c709778650180f46cd74bb095&mpshare=1&scene=23&srcid=0725xNN8Ag9P8bBcT1LMEdBe&sharer_sharetime=1595687165218&sharer_shareid=74759834e69b5893fd58b23bb3f0ffc4#rd" target="_blank" rel="noopener">推荐文章 来源狂神说</a></p>
-</li>
-<li><p>安装Gogland编辑器</p>
-</li>
+        <h1 id="稀疏数组"><a href="#稀疏数组" class="headerlink" title="稀疏数组"></a>稀疏数组</h1><h1 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h1><p><img src="https://img-blog.csdnimg.cn/2020072919292591.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<a id="more"></a>
+
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><ul>
+<li>如上图，左侧，有着许多重复的值，如果全部存储，有相当的值毫无意义。</li>
+<li>这时，我们可以通过一种巧妙的方法压缩这个二维数组，并保证数据不会丢失。这种巧妙的方法就是稀疏数组，我们只需要保存稀疏数组即可，需要的时候解压缩即可。<em>右侧则是我们转换后的稀疏数组数组</em></li>
+<li>稀疏数组记录了原始数组的一些信息，几行几列，多少个有意义的数值，每个数值的相应位置。</li>
+<li>拿上图举例：左侧稀疏数组，第一行能够读出的信息，为六行七列，8个有意义数值，第二行可以读出，数值22的数其数组位置为[0,3],也就是第1行，第四列。</li>
 </ul>
-<h2 id="编写第一个go语言程序"><a href="#编写第一个go语言程序" class="headerlink" title="编写第一个go语言程序"></a>编写第一个go语言程序</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"hello world!"</span>)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>通过上面的案例，我们就可以设计代码，实现特定数组的压缩和解压缩。</strong></p>
+<p><strong>可应用场景，例如五子棋棋盘的存盘</strong></p>
+<h2 id="稀疏数组的代码实现"><a href="#稀疏数组的代码实现" class="headerlink" title="稀疏数组的代码实现"></a>稀疏数组的代码实现</h2><p><strong>思路</strong></p>
+<h3 id="原始数组转稀疏数组（压缩）"><a href="#原始数组转稀疏数组（压缩）" class="headerlink" title="原始数组转稀疏数组（压缩）"></a>原始数组转稀疏数组（压缩）</h3><ol>
+<li>遍历 原始的二维数组，得到有效数据的个数sum</li>
+<li>根据sum就可以创建稀疏数组 sparseArr<code>int[sum+1][3]</code></li>
+<li>将二维数组的有效数据存入到稀疏数组中</li>
+</ol>
+<h3 id="稀疏数组转原始数组（解压缩）"><a href="#稀疏数组转原始数组（解压缩）" class="headerlink" title="稀疏数组转原始数组（解压缩）"></a>稀疏数组转原始数组（解压缩）</h3><ol>
+<li>先读取稀疏数组的第一行，根据第一行的数据，创建原始数组，比如<strong>举例</strong><code>chessArr2=int[6][7]</code></li>
+<li>在读取稀疏数组后几行的数据，并赋值给原始的二维数组即可</li>
+</ol>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lichennan;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SparseArray</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建原始的二维数组 11*11</span></span><br><span class="line">        <span class="keyword">int</span> chessArr1[][] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">11</span>][<span class="number">11</span>];</span><br><span class="line">        chessArr1[<span class="number">1</span>][<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">        chessArr1[<span class="number">2</span>][<span class="number">3</span>] = <span class="number">2</span>;</span><br><span class="line">        <span class="comment">//输出数组</span></span><br><span class="line">        System.out.println(<span class="string">"原始数组"</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] row : chessArr1) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> data: row)&#123;</span><br><span class="line">                System.out.print(<span class="string">"  "</span>+data);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//将二维数组转稀疏数组</span></span><br><span class="line">        <span class="comment">//先遍历二维数组 得到非0数据的个数</span></span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; chessArr1.length; i++) &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;<span class="number">11</span>; j++)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(chessArr1[i][j] != <span class="number">0</span>)&#123;</span><br><span class="line">                        sum++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//创建稀疏数组</span></span><br><span class="line">        <span class="keyword">int</span> sparsArr[][] = <span class="keyword">new</span> <span class="keyword">int</span>[sum+<span class="number">1</span>][<span class="number">3</span>];</span><br><span class="line">        <span class="comment">//给稀疏数组赋值</span></span><br><span class="line">        sparsArr[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">11</span>;</span><br><span class="line">        sparsArr[<span class="number">0</span>][<span class="number">1</span>] = <span class="number">11</span>;</span><br><span class="line">        sparsArr[<span class="number">0</span>][<span class="number">2</span>] = sum;</span><br><span class="line">        <span class="comment">//遍历二维数组，存放非零数据</span></span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>; <span class="comment">//记录第几个非零数据</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; chessArr1.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;<span class="number">11</span>; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(chessArr1[i][j] != <span class="number">0</span>)&#123;</span><br><span class="line">                    count++;</span><br><span class="line">                    sparsArr[count][<span class="number">0</span>] = i;</span><br><span class="line">                    sparsArr[count][<span class="number">1</span>] = j;</span><br><span class="line">                    sparsArr[count][<span class="number">2</span>] = chessArr1[i][j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">       <span class="comment">//输出稀疏数组</span></span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.println(<span class="string">"稀疏数组"</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] srow : sparsArr) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> sdata: srow)&#123;</span><br><span class="line">                System.out.print(<span class="string">"\t"</span>+sdata+<span class="string">" "</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//稀疏数组==》解压缩</span></span><br><span class="line">        <span class="keyword">int</span> chessArr2[][] = <span class="keyword">new</span> <span class="keyword">int</span>[sparsArr[<span class="number">0</span>][<span class="number">0</span>]][sparsArr[<span class="number">0</span>][<span class="number">1</span>]];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; sparsArr.length; i++)&#123;</span><br><span class="line">            chessArr2[sparsArr[i][<span class="number">0</span>]][sparsArr[i][<span class="number">1</span>]] = sparsArr[i][<span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.println(<span class="string">"输出解压缩后的数组"</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] row2 : chessArr2) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> data2: row2)&#123;</span><br><span class="line">                System.out.print(<span class="string">"\t"</span>+data2+<span class="string">" "</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>运行结果</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hello world!</span><br></pre></td></tr></table></figure>
-
-<p>Gogland相关设置</p>
-<p><strong>选择开发包</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/20200727164813694.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><strong>选择工作路径</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/20200727164913388.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>通过命令行运行</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/20200727165016451.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">通过go build 命令生成可以直接执行的二进制文件</span><br><span class="line">生成的二进制文件可直接运行，无需go语言环境</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://img-blog.csdnimg.cn/20200727165052246.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="第一Go语言程序结构分析"><a href="#第一Go语言程序结构分析" class="headerlink" title="第一Go语言程序结构分析"></a>第一Go语言程序结构分析</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"hello world!"</span>)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<ol>
-<li>第一行代码 <em>package main</em> 定义了包名。你必须在源文件中非注释的第一行指明这个文件属于哪个包，如：package main。package main表示一个可独立执行的程序，每个 Go 应用程序都包含一个名为 main 的包。</li>
-<li>下一行 <em>import “fmt”</em> 告诉 Go 编译器这个程序需要使用 fmt 包（的函数，或其他元素），fmt 包实现了格式化 IO（输入/输出）的函数。</li>
-<li>下一行 <em>func main()</em> 是程序开始执行的函数。main 函数是每一个可执行程序所必须包含的，一般来说都是在启动后第一个执行的函数（如果有 init() 函数则会先执行该函数）。</li>
-<li>下一行 <em>fmt.Println(…)</em> 可以将字符串输出到控制台，并在最后自动增加换行字符 \n。<br>使用 fmt.Print(“hello, world\n”) 可以得到相同的结果。<br>Print 和 Println 这两个函数也支持使用变量，如：fmt.Println(arr)。如果没有特别指定，它们会以默认的打印格式将变量 arr 输出到控制台。</li>
-<li>当标识符（包括常量、变量、类型、函数名、结构字段等等）以一个大写字母开头，如：Group1，那么使用这种形式的标识符的对象就可以被外部包的代码所使用（客户端程序需要先导入这个包），这被称为导出（像面向对象语言中的 public）；标识符如果以小写字母开头，则对包外是不可见的，但是他们在整个包的内部是可见并且可用的（像面向对象语言中的 protected ）。</li>
-</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200729190734590.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjU1NDc3Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 
       
 
@@ -305,11 +281,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">目录</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">小记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
         		</li>
       		
 		</ul>
@@ -365,7 +341,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/25/happy/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/29/datademo1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -379,18 +355,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/07/29/datademo1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          稀疏算法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/07/07/day/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">整理</div>
+    <a href="/2020/07/25/happy/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">go语言入门</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -417,7 +384,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#—，什么是go语言"><span class="toc-number">1.</span> <span class="toc-text">—，什么是go语言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编写第一个go语言程序"><span class="toc-number">1.2.</span> <span class="toc-text">编写第一个go语言程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第一Go语言程序结构分析"><span class="toc-number">1.3.</span> <span class="toc-text">第一Go语言程序结构分析</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#稀疏数组"><span class="toc-number">1.</span> <span class="toc-text">稀疏数组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#举例"><span class="toc-number">2.</span> <span class="toc-text">举例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#分析"><span class="toc-number">2.1.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#稀疏数组的代码实现"><span class="toc-number">2.2.</span> <span class="toc-text">稀疏数组的代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#原始数组转稀疏数组（压缩）"><span class="toc-number">2.2.1.</span> <span class="toc-text">原始数组转稀疏数组（压缩）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#稀疏数组转原始数组（解压缩）"><span class="toc-number">2.2.2.</span> <span class="toc-text">稀疏数组转原始数组（解压缩）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">2.2.3.</span> <span class="toc-text">代码</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
